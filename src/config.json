@@ -1,0 +1,6 @@
+{
+    "myServerInfo":{
+        "baseUrl":"localhost:",
+        "port":3000
+    }
+}
