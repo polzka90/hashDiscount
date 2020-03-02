@@ -1,0 +1,19 @@
+{
+    "myServerInfo": {
+        "baseUrl": "localhost:",
+        "port": 3000
+    },
+    "DbConnection": {
+        "host": "localhost",
+        "port": 5432,
+        "username": "postgres",
+        "password": "123456",
+        "database": "postgres"
+    },
+    "DiscountParameters": {
+        "BirthDayDiscountPtc": 5,
+        "DateBlackFriday": "25/11",
+        "PtcBlackFriday": 10,
+        "MaximumDiscountPtc": 10
+    }
+}

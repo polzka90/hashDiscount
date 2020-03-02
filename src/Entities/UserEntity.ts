@@ -1,6 +1,6 @@
 import {Entity, PrimaryColumn, Column} from "typeorm";
 
-@Entity()
+@Entity({ schema: 'public', synchronize: false })
 export class tbl_users {
 
     @PrimaryColumn()
