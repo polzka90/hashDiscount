@@ -15,6 +15,7 @@
     "grpc": "^1.24.2",
     "grpc-tools": "^1.8.1",
     "grpc_tools_node_protoc_ts": "^2.5.10",
+    "inversify": "^5.0.1",
     "pg": "^7.18.2",
     "ts-node": "^8.6.2",
     "ts-postgres": "^1.1.3",

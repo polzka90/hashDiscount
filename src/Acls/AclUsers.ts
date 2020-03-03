@@ -2,17 +2,17 @@ import {createConnection } from "typeorm";
 import { tbl_users } from "../Entities/UserEntity"
 import * as myConfig from '../config.json';
 import "reflect-metadata";
-import { join } from "path";
-import { resolve } from "dns";
-import { rejects } from "assert";
+import { User } from "../Models/User";
+import { injectable } from "inversify";
 
+@injectable()
 export class AclUsers
 {
     constructor(){}
-    GetUser(id: string) : Promise<tbl_users | undefined> {
+     GetUser(id: string) : Promise<User> {
 
         return new Promise((resolve, rejects) => {
-        createConnection(
+         createConnection(
             {
                 type: "postgres",
                 host: myConfig.DbConnection.host,
@@ -21,7 +21,6 @@ export class AclUsers
                 password: myConfig.DbConnection.password,
                 database: myConfig.DbConnection.database,
                 entities: [
-                    //join(__dirname, '/../Entities/UserEntity.{.ts,.js}')
                     tbl_users
                 ],
                 synchronize: true,
@@ -30,11 +29,23 @@ export class AclUsers
         ).then(connection => {
             let userRepository = connection.getRepository(tbl_users);
             userRepository.findOne({
-                select: ["id","first_name"],
-                where: `id = '42975333080'`
+                select: ["id","first_name", "last_name", "date_of_birth"],
+                where: `id = '`+id+`'`
             }).then((tbl_users) =>{
-                console.log(tbl_users);
-                resolve(tbl_users);
+
+                if(tbl_users)
+                {
+                let user : User = {
+                    Id : tbl_users.id,
+                    BirthDate : tbl_users?.date_of_birth,
+                    FirstName : tbl_users?.first_name,
+                    LastName : tbl_users.last_name
+                };
+                resolve(user);
+                }
+                else{
+                    rejects(new Error('Usuario não achado'));
+                }   
             });
             // here you can start to work with your entities
             
