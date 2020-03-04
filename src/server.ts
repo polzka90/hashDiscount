@@ -1,16 +1,14 @@
 import "reflect-metadata";
 import myConfig from './config.json';
-import { protoIndex } from './protos';
-import DiscountController from './Controllers/DiscountController';
-
-//42975333080
+//import { protoIndex } from './protos';
+import { DiscountController } from './Controllers/DiscountController';
 
 import * as grpc from 'grpc';
 
 
 
 
-protoIndex();
+//protoIndex();
 
 const port: string | number = process.env.PORT || 50051;
 
@@ -20,7 +18,7 @@ export const startServer: StartServerType = (): void => {
     const server: grpc.Server = new grpc.Server();
 
     // register all the handler here...
-    server.addService(greeterHandler.service, greeterHandler.handler);
+    //server.addService(greeterHandler.service, greeterHandler.handler);
 
     // define the host/port for server
     server.bindAsync(

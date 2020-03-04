@@ -27,7 +27,7 @@ export class DiscountService
         {
             user  = await this.aclUser.GetUser(userId);
 
-            if(user && today == user.BirthDate)
+            if(user && (today.getDay() == user.BirthDate.getDay() && today.getMonth() == user.BirthDate.getMonth()))
             {
                 Discount += myConfig.DiscountParameters.BirthDayDiscountPtc;
             }
