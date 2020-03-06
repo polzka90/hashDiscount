@@ -3,11 +3,11 @@
 BASEDIR=$(dirname "$0")
 cd "${BASEDIR}"/../
 
-PROTOC_GEN_TS_PATH="./node_modules/.bin/protoc-gen-ts"
-GRPC_TOOLS_NODE_PROTOC_PLUGIN="./node_modules/.bin/grpc_tools_node_protoc_plugin"
-GRPC_TOOLS_NODE_PROTOC="./node_modules/.bin/grpc_tools_node_protoc"
+PROTOC_GEN_TS_PATH="C:/PrivateWorkSpace/hashDiscount/node_modules/.bin/protoc-gen-ts.cmd"
+GRPC_TOOLS_NODE_PROTOC_PLUGIN="C:/PrivateWorkSpace/hashDiscount/node_modules/.bin/grpc_tools_node_protoc_plugin.cmd"
+GRPC_TOOLS_NODE_PROTOC="C:/PrivateWorkSpace/hashDiscount/node_modules/.bin/grpc_tools_node_protoc.cmd"
 
-for f in ./src/proto/*; do
+for f in ./src/protos/*; do
 
   # skip the non proto files
   if [ "$(basename "$f")" == "index.ts" ]; then
