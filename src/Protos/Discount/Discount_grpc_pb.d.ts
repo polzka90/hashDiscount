@@ -1,4 +1,4 @@
-// package: greeter
+// package: discount
 // file: Discount.proto
 
 /* tslint:disable */
@@ -12,7 +12,7 @@ interface IDiscountService extends grpc.ServiceDefinition<grpc.UntypedServiceImp
 }
 
 interface IDiscountService_IGetDiscount extends grpc.MethodDefinition<Discount_pb.DiscountRequest, Discount_pb.DiscountResponse> {
-    path: string; // "/greeter.Discount/GetDiscount"
+    path: string; // "/discount.Discount/GetDiscount"
     requestStream: boolean; // false
     responseStream: boolean; // false
     requestSerialize: grpc.serialize<Discount_pb.DiscountRequest>;

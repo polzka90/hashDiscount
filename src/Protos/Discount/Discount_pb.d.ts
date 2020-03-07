@@ -1,4 +1,4 @@
-// package: greeter
+// package: discount
 // file: Discount.proto
 
 /* tslint:disable */
@@ -35,9 +35,6 @@ export class DiscountResponse extends jspb.Message {
     getPct(): number;
     setPct(value: number): void;
 
-    getValueInCents(): number;
-    setValueInCents(value: number): void;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): DiscountResponse.AsObject;
@@ -52,6 +49,5 @@ export class DiscountResponse extends jspb.Message {
 export namespace DiscountResponse {
     export type AsObject = {
         pct: number,
-        valueInCents: number,
     }
 }

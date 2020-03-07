@@ -12,7 +12,7 @@
     },
     "DiscountParameters":{
         "BirthDayDiscountPtc":5,
-        "DateBlackFriday":"25/11",
+        "DateBlackFriday":"7/3",
         "PtcBlackFriday":10,
         "MaximumDiscountPtc": 10
     }

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package greeter;
+package discount;
 
 
 service Discount {
@@ -16,5 +16,4 @@ message DiscountRequest {
 
 message DiscountResponse {
   float pct = 1;
-  int32 value_in_cents = 2;
 }
