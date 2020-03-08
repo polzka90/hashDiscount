@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import myConfig from './config.json';
-import { protoIndex } from './protos';
+import { protoIndex } from './Protos';
 import  DiscountController  from './Controllers/DiscountController';
 
 import * as grpc from 'grpc';

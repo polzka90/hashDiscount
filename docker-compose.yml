@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  web-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: discountdocker
+    volumes:
+      - ./src:/home/node/app/src
+    expose:
+      - "3000"
+      - "5432"
+    ports:
+      - "3000:3000"
+      - "5432:5432"
+    command: npm start

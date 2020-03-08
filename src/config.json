@@ -4,7 +4,7 @@
         "port":3000
     },
     "DbConnection":{
-        "host":"localhost",
+        "host":"192.168.0.8",
         "port":5432,
         "username":"postgres",
         "password":"123456",
@@ -12,7 +12,7 @@
     },
     "DiscountParameters":{
         "BirthDayDiscountPtc":5,
-        "DateBlackFriday":"7/3",
+        "DateBlackFriday":"25/11",
         "PtcBlackFriday":10,
         "MaximumDiscountPtc": 10
     }

@@ -5,35 +5,34 @@ import { User } from "../Models/User";
 import * as myConfig from '../config.json';
 
 @injectable()
-export class DiscountService
-{
+export class DiscountService {
     protected aclUser: AclUsers;
 
-    constructor(@inject(AclUsers) aclUsers: AclUsers ){
+    constructor(@inject(AclUsers) aclUsers: AclUsers) {
         this.aclUser = aclUsers;
     }
-    async GetAllDiscountByUser(userId: string)   {
+    async GetAllDiscountByUser(userId: string) {
 
         let today = new Date();
-        let user : User;
-        let Discount : number = 0;
+        let user: User;
+        let Discount: number = 0;
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0');
 
-        if(today.getDay() + '/' + today.getMonth() == myConfig.DiscountParameters.DateBlackFriday)
-        {
+        if (dd + '/' + mm == myConfig.DiscountParameters.DateBlackFriday) {
             Discount += myConfig.DiscountParameters.PtcBlackFriday;
         }
 
-        try
-        {
-            user  = await this.aclUser.GetUser(userId);
-
-            if(user && (today.getDay() == user.BirthDate.getDay() && today.getMonth() == user.BirthDate.getMonth()))
-            {
-                Discount += myConfig.DiscountParameters.BirthDayDiscountPtc;
+        try {
+            user = await this.aclUser.GetUser(userId);
+            if (user) {
+                let userDay = String(user.BirthDate.getDate()).padStart(2, '0');
+                if ((dd == userDay && today.getMonth() == user.BirthDate.getMonth())) {
+                    Discount += myConfig.DiscountParameters.BirthDayDiscountPtc;
+                }
             }
         }
-        catch(rejected)
-        {
+        catch (rejected) {
 
         }
 

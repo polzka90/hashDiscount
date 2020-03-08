@@ -14,7 +14,7 @@
             "program": "${workspaceFolder}\\src\\server.ts",
             "preLaunchTask": "tsc: build - tsconfig.json",
             "outFiles": [
-                "${workspaceFolder}/**/*.js"
+                "${workspaceFolder}/dist/**/*.js"
             ],
             "args": ["${relativeFile}"],
             "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
@@ -27,7 +27,7 @@
             "request": "launch",
             "name": "Jasmine All",
             "program": "${workspaceFolder}/node_modules/jasmine/bin/jasmine",
-            "args": ["${workspaceFolder}/out/Tests/*.js"],
+            "args": ["${workspaceFolder}/dist/Tests/*.js"],
             "preLaunchTask": "tsc: build - tsconfig.json",
             "postDebugTask": "RemoveTSOutputFolder",
             "outFiles": ["${workspaceFolder}/TSOutput/**/*.js"],
@@ -40,7 +40,7 @@
             "name": "Jasmine Current File",
             "program": "${workspaceFolder}/node_modules/jasmine/bin/jasmine",
             "args": [
-              "${workspaceFolder}/out/Tests/${fileBasenameNoExtension}.js"
+              "${workspaceFolder}/dist/Tests/${fileBasenameNoExtension}.js"
             ],
             "preLaunchTask": "tsc: build - tsconfig.json",
             "postDebugTask": "RemoveTSOutputFolder",

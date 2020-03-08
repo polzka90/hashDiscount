@@ -4,7 +4,8 @@
   "description": "",
   "main": ".src/server.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p",
+    "start": "ts-node ./src/server.ts",
     "test": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json"
   },
   "author": "polzka90",
