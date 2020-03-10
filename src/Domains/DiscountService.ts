@@ -16,6 +16,7 @@ export class DiscountService {
         let today = new Date();
         let user: User;
         let Discount: number = 0;
+        
         let dd = String(today.getDate()).padStart(2, '0');
         let mm = String(today.getMonth() + 1).padStart(2, '0');
 
@@ -26,14 +27,21 @@ export class DiscountService {
         try {
             user = await this.aclUser.GetUser(userId);
             if (user) {
+
                 let userDay = String(user.BirthDate.getDate()).padStart(2, '0');
-                if ((dd == userDay && today.getMonth() == user.BirthDate.getMonth())) {
+                let userMonth = String(user.BirthDate.getMonth() + 1).padStart(2, '0');
+                if ((dd == userDay && mm == userMonth)) {
                     Discount += myConfig.DiscountParameters.BirthDayDiscountPtc;
+                }else{
+                    console.log("nao e aniversario");
+                    console.log("user birthday "+user.BirthDate);
+                    console.log("today "+today);
                 }
             }
         }
         catch (rejected) {
-
+            console.log("error getting the user");
+            
         }
 
         Discount = Discount > myConfig.DiscountParameters.MaximumDiscountPtc ? myConfig.DiscountParameters.MaximumDiscountPtc : Discount;
