@@ -18,7 +18,7 @@ Teste Backend da empresa Hash, diretamente relacionado com [HashProducts](https:
 4. Configurar os acessos para o container conectar em postgreSql mediante la configuração dos siguentes arquivos na pasta de instalação:
 	4.1. no arquivo postgresql.conf verificar que a seguente linha esta descomentada listen_addresses = '*'
 	4.2. pg_hba.conf adicionar a siguente linha 
-	# TYPE DATABASE USER CIDR-ADDRESS  METHOD
+	\# TYPE DATABASE USER CIDR-ADDRESS  METHOD
 	  host   all     all   0.0.0.0/0     md5
 5. na raiz do projeto configurar o arquivo config.json para ter o acessos certo ao banco e demais configurações
 6. configurar tambem os arquivos Dockerfile e docker-compose.yml para ter acessos aos portos
