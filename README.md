@@ -20,6 +20,7 @@ Teste Backend da empresa Hash, diretamente relacionado com [HashProducts](https:
 	4.2. pg_hba.conf adicionar a siguente linha 
 	
 	\# TYPE DATABASE USER CIDR-ADDRESS  METHOD
+	
 	  host   all     all   0.0.0.0/0     md5
 	  
 5. na raiz do projeto configurar o arquivo config.json para ter o acessos certo ao banco e demais configurações
@@ -28,5 +29,5 @@ Teste Backend da empresa Hash, diretamente relacionado com [HashProducts](https:
 8. verificar o console do docker que o serviço de gRpc este funcionando no porto configurado
 9. Pode ser usado um GUI como BloomRpc e os .proto que estão dentro do projeto para testar o serviço
 
-## Serviço 1: Desconto invidual de produto
+
 
