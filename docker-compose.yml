@@ -15,3 +15,10 @@ services:
       - "3000:3000"
       - "5432:5432"
     command: npm start
+    networks:
+      hash-network:
+        aliases: 
+          - discounthost
+networks:
+  hash-network:
+    external: true
